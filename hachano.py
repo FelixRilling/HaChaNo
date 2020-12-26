@@ -1,22 +1,20 @@
-import logging
-from logging import Logger
+from logging import Logger, getLogger
 from typing import Dict
 
-import pyudev
-from playsound import playsound
-from pyudev import Context, Device
+from pydub import playback, AudioSegment
+from pyudev import Context, Device, Monitor
 
 
 class HaChaNo:
-    __logger: Logger = logging.getLogger("HaChaNo")
+    __logger: Logger = getLogger("HaChaNo")
     __sounds: Dict[str, str]
 
     def __init__(self, sounds: Dict[str, str]):
         self.__sounds = sounds
 
     def start(self):
-        context: Context = pyudev.Context()
-        monitor = pyudev.Monitor.from_netlink(context)
+        context: Context = Context()
+        monitor = Monitor.from_netlink(context)
         monitor.filter_by("usb", "usb_device")
         self.__logger.info("Start listening for device changes.")
         for device in iter(monitor.poll, None):
@@ -35,5 +33,4 @@ class HaChaNo:
         if sound_path is None:
             self.__logger.warning("No sound configured for '%s'.", sound)
             return
-
-        playsound(sound_path)
+        playback.play(AudioSegment.from_file(sound_path))
