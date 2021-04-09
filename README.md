@@ -2,15 +2,14 @@
 
 > **Ha**rdware **Cha**nge **No**tifier
 
-Simple Python script to play sounds when usb devices are added and removed under linux, the same way windows does.
+Simple python script to play sounds when USB devices are connected or disconnected under linux (like under windows).
 
 ## Dependencies
 
 Requires Python 3.x and pip.
 
 1. Ensure `libudev` is available.
-2. Prepare [PyGObject requirements](https://pygobject.readthedocs.io/en/latest/getting_started.html#) ("Installing from PyPI with pip").
-3. Install pip dependencies.
+2. Install pip dependencies.
  ```shell script
 pip install -r requirements.txt
 ```
