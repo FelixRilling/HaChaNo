@@ -10,10 +10,11 @@ Requires Python 3.x and pip.
 
 1. Ensure `libudev` is available.
 2. Install pip dependencies.
+
  ```shell script
 pip install -r requirements.txt
 ```
- 
+
 ## Usage
 
 Configure the sounds in `config.yaml` to fit your needs, then start `main.py`.
