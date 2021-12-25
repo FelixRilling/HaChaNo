@@ -2,18 +2,14 @@
 
 > **Ha**rdware **Cha**nge **No**tifier
 
-Simple python script to play sounds when USB devices are connected or disconnected under linux (like under windows).
+Simple python script to play sounds when USB devices are connected or disconnected under linux.
 
 ## Dependencies
 
 Requires Python 3.x and pip.
 
-1. Ensure `libudev` is available.
-2. Install pip dependencies.
-
- ```shell script
-pip install -r requirements.txt
-```
+1. Ensure `libudev` is available on your system.
+2. Install the python modules listed in `requirements.txt` using your package manager or pip.
 
 ## Usage
 
